@@ -8,7 +8,7 @@ use tablePrinter;
 use navPrinter;
 use userDatabase;
 use reservations;
-use Switch;
+use v5.10.1;
 use logger;
 
 #Phase 3 Print out the appropriate info to page and log
@@ -32,17 +32,17 @@ sub display{
     if($response){ alert($response) }
     
     #print debug(\%in);
-    switch($printState){
-            case 'mkEmail'      { printPage('mkEmail', '') }
-            case undef          { 
+    for($printState){
+            when ('mkEmail')      { printPage('mkEmail', '') }
+            when (undef)          { 
                 my $ie = $ENV{'HTTP_USER_AGENT'};
                 if ($ie =~ /MSIE/) {
                     alert('Internet Explorer not Recomended');
                 }
                 printPage('login', '') 
             }
-            case 'PDF'          { openPDF( $user ); }
-            case 'userActivity' {
+            when ('PDF')          { openPDF( $user ); }
+            when ('userActivity') {
                 printNav( $user );
                 my $printUser = '';
                 my $pLog;
@@ -57,18 +57,18 @@ sub display{
                 print '
         <div class="center4">'.$pLog.'</div>';
             }
-            case 'reserve'      { openReserve($user, \%in ) }
-            case 'rmUser'       {
+            when ('reserve')      { openReserve($user, \%in ) }
+            when ('rmUser')       {
                 my $userList = getUserSelector();
                 printNav( $user );
                 printPageIns( 'rmUser', $user, $userList );
             }
-            case 'startMyLog'       {
+            when ('startMyLog')       {
                 my $userList = getUserSelector();
                 printNav( $user );
                 printPageIns( 'startMyLog', $user, $userList );
             }
-            else                { 
+            default                { 
                 printNav( $user );
                 printPage($printState, $user);
             }

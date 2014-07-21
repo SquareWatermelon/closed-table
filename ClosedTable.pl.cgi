@@ -8,10 +8,12 @@
 #Phase 3 Print out alerts and the log to provide information about event and
 #   Print out appropriate page.
 #*******************************************************************************
-BEGIN {
-  push(@INC, '/home/rmt2131/html/cs3157/project1/scripts');
-  push(@INC, '/home/rmt2131/html/cs3157/project1/foreign');
-};
+#BEGIN {
+#  push(@INC, '/home/rmt2131/html/cs3157/project1/scripts');
+#  push(@INC, '/home/rmt2131/html/cs3157/project1/foreign');
+#};
+use lib 'scripts';
+use lib 'foreign';
 use strict;
 use validater;
 use executer;

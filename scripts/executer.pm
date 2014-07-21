@@ -6,7 +6,8 @@
 ################################################################################
 
 use strict;
-use Switch;
+#use Switch;
+use v5.10.1;
 use misc;
 #use test;
 use tableMaker;
@@ -23,8 +24,8 @@ use reservations;
 sub chooseSuccess{
     my %in = %{shift @_};
     my $state = $in{'state'};
-    switch($state){
-    case "getTables"    {
+    for($state){
+    when ("getTables")    {
         my ($startTime, $endTime, $date) = 
             ($in{'startTime'}, 
              $in{'endTime'}, 
@@ -33,7 +34,7 @@ sub chooseSuccess{
                 0,
                 "\tThey viewed tables from $startTime to $endTime on $date.\n")
     }
-    case "mkPDF"    {
+    when ("mkPDF")    {
         my $date = $in{'date'};
         my ($month, $day, $year) = split ( /\D/, $date);
         printPDF( $day, $month, $year );
@@ -41,21 +42,21 @@ sub chooseSuccess{
                 0,
                 "\tThey viewed a tables PDF from $date.\n")
     }
-    case "mkTPass"      {
+    when ("mkTPass")      {
         my $emailUser = $in{'emailUser'};
         tempPassword( $emailUser );
         return ('login', 
                 'Email Sent',
                 "\tThey had there password changed via forgot password.\n");
     }
-    case "mkPassword"   { 
+    when ("mkPassword")   { 
         updatePassword($in{'userName'}, $in{'newPassword'});
         my $ps = isAdmin($in{'userName'}) ? 'adminHome' : 'userHome';
         return ($ps,
                 'Password Changed!: )',
                 "\tThey successfully changed their password.\n");
     }
-    case "mkReserve"    {
+    when ("mkReserve")    {
         my ($mkName, $mkNumber, $mkDate, $mkTime, $mkPhone, $user) = 
             ($in{'mkName'}, $in{'mkNumber'}, $in{'mkDate'}, $in{'mkTime'}, 
             $in{'mkPhone'}, $in{'userName'});
@@ -68,14 +69,14 @@ sub chooseSuccess{
             "\tThey successfully made a reservation under $mkName for $mkNumber"
             . " on $mkDate at $mkTime.\n" );
     }
-    case "mkTable"      {
+    when ("mkTable")      {
         my $mkTableNumber = $in{'mkTableNumber'};
         makeTable($mkTableNumber);
         return ( 'adminHome',
                 'Table Made! : )',
                 "\tThey successfully added a table of size $mkTableNumber.\n");
     }
-    case "mkUser"       {
+    when ("mkUser")       {
         my ( $mkUserName, $mkPassword, $mkEmail, $mkAdmin ) = 
             ($in{'mkUserName'}, $in{'mkPassword'}, $in{'mkEmail'}, $in{'isAdmin' });
         $mkAdmin = ($mkAdmin eq 'isAdmin') ? 1 : 0;
@@ -84,7 +85,7 @@ sub chooseSuccess{
                  'User Made!^___^',
                  "\tThey successfully added a user named $mkUserName.\n");
     }
-    case "rmReserve"    {
+    when ("rmReserve")    {
         my ($rmName, $rmNumber, $rmTime, $rmDate) = 
             ($in{'rmName'},
             $in{'rmNumber'},
@@ -99,34 +100,34 @@ sub chooseSuccess{
                 "\tThey successfully removed a reservation for $rmNumber under" . 
                 "$rmName at $rmTime on $rmDate.\n");
     }
-    case "rmTable"      {
+    when ("rmTable")      {
         my $rmTableNumber = $in{'rmTableNumber'};
         removeTable($rmTableNumber);
         return ('adminHome',
                 'Table Removed',
                 "\tThey successfully removed a table of size $rmTableNumber.\n");
     }
-    case "rmUser"       {
+    when ("rmUser")       {
         my $rmUserName = $in{'rmUserName'};
         rmUser($rmUserName);
         return ('adminHome',
                 'User Removed',
                 "\tThey successfully removed a user named $rmUserName.\n");
     }
-    case "startMyLog"   {
+    when ("startMyLog")   {
         my $rmUserName = $in{'rmUserName'};
         return ('userActivity',
                 '',
                 "\tThey veiwed the log of $rmUserName.\n");
         
     }
-    case "tryLogin"     {
+    when ("tryLogin")     {
         my $ps = isAdmin($in{'userName'}) ? 'adminHome' : 'userHome';
         return ($ps,
                 0,
                 "\tThey successfully logged in.\n");
     }
-    else                { 
+    default                { 
         return (0,
                 'Bad submission error 13!' . $in{"state"},
                 'Bad submission error 13!' . $in{"state"});

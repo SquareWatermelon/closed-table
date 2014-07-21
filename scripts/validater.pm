@@ -4,7 +4,8 @@
 #*******************************************************************************
 
 use strict;
-use Switch;
+use v5.14;
+#use Switch;
 use misc;
 use tableMaker;
 use reservations;
@@ -17,28 +18,28 @@ sub getWarnings {
     my $warningString = '';
     my $state = $in{'state'};
 #    print $in{'userName'};
-    switch( $state ){
-    case "getTables"    {
+    for( $state ){
+    when ("getTables")    {
         $warningString = getGetTablesWarnings(
             $in{'date'}, 
             $in{'startTime'},
             $in{'endTime'});
     }
-    case "mkPDF"      { 
+    when ("mkPDF")      { 
         $warningString = getMkPDFWarnings($in{'date'});
     }
-    case "mkTPass"      { 
+    when ("mkTPass")      { 
         $warningString = getMkEmailWarnings(
             $in{'emailUser'}, 
             $in{'mkEmail'});
     }
-    case "mkPassword"   { 
+    when ("mkPassword")   { 
         $warningString = getMkPasswordWarnings(
             $in{'oldPassword'},
             $in{'newPassword'},
             $in{'userName'});
     }
-    case "mkReserve"    {
+    when ("mkReserve")    {
         $warningString = getMkReserveWarnings(
             $in{'mkName'},
             $in{'mkNumber'},
@@ -46,37 +47,37 @@ sub getWarnings {
             $in{'mkDate'},
             $in{'mkPhone'});
     }
-    case "mkTable"      {
+    when ("mkTable")      {
         $warningString = getMkTableWarnings(
             $in{'mkTableNumber'});
     }
-    case "mkUser"       {
+    when ("mkUser")       {
         $warningString = getMkUserWarnings(
             $in{'mkUserName'}, 
             $in{'mkPassword'}, 
             $in{'mkEmail'   });
     }
-    case "rmReserve"    {
+    when ("rmReserve")    {
         $warningString = getRmReserveWarnings(
             $in{'rmName'},
             $in{'rmTime'},
             $in{'rmDate'},
             $in{'rmNumber'});
     }
-    case "rmTable"      {
+    when ("rmTable")      {
         $warningString = getRmTableWarnings(
             $in{'rmTableNumber'});
     }
-    case "rmUser"       {
+    when ("rmUser")       {
         $warningString = getRmUserWarnings(
             $in{"rmUserName"});
     }
-    case "tryLogin"     {
+    when ("tryLogin")     {
         $warningString = getLoginWarnings(
             $in{'userName'},
             $in{'password'});
     }
-    else                { 
+    default                { 
         $warningString = 'Bad submission error 10!' . $in{"state"} 
     }
     }
