@@ -1,0 +1,65 @@
+<!--The Sign in form-->
+<form id=UserForm action="ClosedTable.pl.cgi" method="post" >
+<div class="center2">
+    <input type="hidden" name="state" value="mkUser">
+    <input type="hidden" name="printState" value="mkUser">
+    <input type="hidden" name="userName" value="!!userName!!">
+    <div class="TLcorner">
+        <img src="images/corner.png" width="11" height="11" />
+    </div>
+    <div class="TRcorner" >
+        <img src="images/TRcorner.png" width="11" height="11" />
+    </div>
+    <div class="BLcorner">
+        <img src="images/BLcorner.png" width="11" height="11" />
+    </div>
+    <div class="BRcorner">
+        <img src="images/BRcorner.png" width="11" height="11" />
+    </div>
+    <table width="100%" border="0" cellspacing="6"  class="Setup" summary="Select Times">
+      <caption>Give User Info</caption>
+      <tr>
+        <td width="107" align="right" valign="top"> UserName: </td>
+        <td width="12">&emsp;</td>
+        <td width="177" align="left" valign="top">
+            <input name="mkUserName" type="text" tabindex= "1" 
+                value="The New Users Name, space = +" onfocus="clearText(this)" 
+                onblur="clearText(this)" />
+        </td>
+      </tr>
+      <tr>
+        <td width="107" align="right" valign="top"> Password: </td>
+        <td width="12">&emsp;</td>
+        <td width="177" align="left" valign="top">
+            <input name="mkPassword" type="password" tabindex= "2" 
+                value="" onfocus="clearText(this)" 
+                onblur="clearText(this)" />
+        </td>
+      </tr>
+      <tr>
+        <td width="107" align="right" valign="top"> Email: </td>
+        <td width="12">&emsp;</td>
+        <td width="177" align="left" valign="top">
+            <input name="mkEmail" type="text" tabindex= "3" 
+                value="The New Users Email" onfocus="clearText(this)" 
+                onblur="clearText(this)" />
+        </td>
+      </tr>
+      <tr>
+        <td width="107" align="right" valign="top"> Admin: </td>
+        <td width="12">&emsp;</td>
+        <td width="177" align="left" valign="top">
+            <input name="isAdmin" type="checkbox" tabindex= "3" 
+                value="isAdmin" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+            <button type="submit" value="Submit" class="submitBtn">
+                <span>Submit</span>
+            </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>

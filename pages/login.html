@@ -1,0 +1,53 @@
+<!--The Sign in form-->
+<form id="navForm" action="ClosedTable.pl.cgi" method="post" >
+    <input type="hidden" name="state" value="skip">
+    <input type="hidden" name="printState" value="mkEmail">
+</form>
+<form id="loginForm" action="ClosedTable.pl.cgi" method="post" >
+<div class="center2">
+    <input type="hidden" name="state" value="tryLogin">
+    <!-- input type="hidden" name="printState" value="login" -->
+    <div class="TLcorner">
+        <img src="images/corner.png" width="11" height="11" />
+    </div>
+    <div class="TRcorner" >
+        <img src="images/TRcorner.png" width="11" height="11" />
+    </div>
+    <div class="BLcorner">
+        <img src="images/BLcorner.png" width="11" height="11" />
+    </div>
+    <div class="BRcorner">
+        <img src="images/BRcorner.png" width="11" height="11" />
+    </div>
+    <table width="100%" border="0" cellspacing="6"  class="Setup" summary="Sign In">
+      <caption id="signin">
+        <div style="margin-top: 20px;" > <img src="images/CT_Splash.jpg" alt="Closed Table" width = "300" height = "200" border="1" ></div>
+      </caption>
+      <tr>
+        <td width="107" align="right" valign="top"> User&nbsp;Name: </td>
+        <td width="12">&emsp;</td>
+        <td width="177" align="left" valign="top">
+            <input name="userName" type="text" id="signinName" tabindex= "1" 
+                value="Your Sign in Name" onfocus="clearText(this)" 
+                onblur="clearText(this)" />
+        </td>
+      </tr>
+      <tr>
+        <td align="right" valign="top"> Password: </td>
+        <td>&emsp;</td>
+        <td align="left" valign="top">
+            <input name="password" type="password" id="password" tabindex="2" 
+                onfocus="clearText(this)" onblur="clearText(this)" />
+            <a href="javascript:setPrintState('mkEmail')" >?</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+            <button type="submit" value="Login" class="submitBtn">
+                <span>Sign in to Closed Table</span>
+            </button>
+        </td>
+      </tr>
+    </table>
+</div>
+</form>

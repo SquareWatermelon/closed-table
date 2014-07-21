@@ -1,0 +1,46 @@
+<form id=emailForm action="ClosedTable.pl.cgi" method="post" >
+<div class="center2">
+    <input type="hidden" name="state" value="mkTPass">
+    <input type="hidden" name="printState" value="mkEmail">
+    <div class="TLcorner">
+        <img src="images/corner.png" width="11" height="11" />
+    </div>
+    <div class="TRcorner" >
+        <img src="images/TRcorner.png" width="11" height="11" />
+    </div>
+    <div class="BLcorner">
+        <img src="images/BLcorner.png" width="11" height="11" />
+    </div>
+    <div class="BRcorner">
+        <img src="images/BRcorner.png" width="11" height="11" />
+    </div>
+    <table width="100%" border="0" cellspacing="6"  class="Setup" summary="Select Times">
+      <caption>Forgot&nbsp;Password?</caption>
+      <tr>
+        <td width="107" align="right" valign="top"> UserName: </td>
+        <td width="12">&emsp;</td>
+        <td width="177" align="left" valign="top">
+            <input name="emailUser" type="text" tabindex= "1" 
+                value="User Name" onfocus="clearText(this)" 
+                onblur="clearText(this)" />
+        </td>
+      </tr>
+      <tr>
+        <td width="107" align="right" valign="top"> Email: </td>
+        <td width="12">&emsp;</td>
+        <td width="177" align="left" valign="top">
+            <input name="mkEmail" type="text" tabindex= "1" 
+                value="email" onfocus="clearText(this)" 
+                onblur="clearText(this)" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+            <button type="submit" value="Submit" class="submitBtn">
+                <span>Send&nbsp;Email</span>
+            </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</form>

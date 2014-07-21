@@ -1,0 +1,243 @@
+body {
+	background-color: #f3faf4;
+	min-width: 400px;
+}
+
+body,td,th {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	color: #05330F;
+}
+
+a:link, a:visited{
+	color: #30AB4A;
+	text-decoration: none;
+}
+
+input, select, textarea{
+	font-family: Verdana, Geneva, sans-serif;
+	color: #463310;
+	background-color: #f3faf4;
+	width: auto;
+	font-size: 11px;
+	left: auto;
+	text-align: left;
+}
+
+/*div.CenterHidden{
+	bottom: 0px;
+	position: absolute;
+	left: 50%;
+	font-size: 12px;
+	width: 40em;
+	margin-left: -20em;
+}*/
+
+/*The Title Bar*/
+table.Navigation {
+	border-collapse: collapse;
+	color: #30AB4A;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	font-weight: bolder;
+	background: #ABFFB4;
+	background-image: url(images/capt.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	border-color: #30AB4A;
+	padding-bottom: 4px;
+	margin-right: 0px;
+	padding-top: 1px;
+	padding-left: 0px;
+	border-bottom: 2px solid #30AB4A;
+}
+table.Navigation  td{
+    padding-left: 0px;
+    border-collapse: collapse;
+}
+
+td.bottom{
+	border-bottom-width: 2px;
+	border-bottom: 2px solid;
+	border-bottom-color: #fff;
+}
+td.TitleCell{
+	border-bottom-width: 0px;
+	padding: 0px;
+	position:relative;
+}
+
+div.CenterTitle{
+	bottom: -2px;
+	min-width: 200px;
+	max-width: 260px;
+	max-height: 40px;
+	position:relative;
+}
+/*
+div.CenterTitle{
+	bottom: 0px;
+	position: absolute;
+	left: 50%;
+	width: 200px;
+	margin-left: -100px;
+}
+*/
+
+div.title{
+	text-align: center;
+	bottom: 0px;
+	height: 2em;
+	padding-top: .3em;
+	padding-bottom: .3em;
+	padding-left: .3em;
+	padding-right: .3em;
+	background-color: #f3faf4;
+	border: solid;
+	border-top-width: 2px;
+	border-top-color: #fff;
+	border-bottom-width: 0px;
+	border-left-width: 2px;
+	border-left-color: #fff;
+	border-right-color: #05330f;
+	border-right-width: 2px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+div.float{
+	float:left;
+}
+
+/*Table Stuff*/
+
+div.subhead{
+	text-align:center;
+	padding-bottom: .5em;
+	margin-top: 1em;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	font-weight: bolder;
+	color: #30AB4A;
+}
+
+
+caption{
+	border-collapse: collapse;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	font-weight: bolder;
+	background-color: #30AB4A;
+	background-image: url(images/capt.png);
+	background-repeat: repeat-x;
+	padding-bottom: 6px;
+	padding-top: 2px;
+	border-bottom-width: 0px;
+	background-position: bottom;
+	border-right: solid 2px #05330F;
+	border-left: solid 0px #fff;
+	border-top: solid 0px #fff; 
+}
+div.center2{
+	position: absolute;
+	left: 50%;
+	width: 320px;
+	margin-left: -155px;
+	margin-top: 40px;
+}
+div.center3{
+	position: absolute;
+	left: 50%;
+	width: 400px;
+	margin-left: -200px;
+	margin-top: 40px;
+}
+div.center4{
+	position: absolute;
+	left: 50%;
+	width: 800px;
+	margin-left: -400px;
+	margin-top: 40px;
+}
+
+
+/* The Common Table */
+table.Setup {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 24px;
+	font-weight: bolder;
+	color: #f3faf4;
+	filter: DropShadow(Color=#05330f, OffX=2, OffY=2, Positive=2);
+	background: #ABFFB4;
+	left:inherit;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-right: solid 2px #05330F; 
+	border-bottom: solid 2px #05330F; 
+	width: 320px;
+}
+
+/* The Corners*/
+
+#signin{
+	background-color: #ABFFB4;
+	background-position: top;
+}
+
+div.TLcorner {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+div.TRcorner {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+div.BLcorner {
+	z-index: 1;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+div.BRcorner {
+	z-index: 1;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+/* added positional stuff */
+
+div.stackShell {
+    float: left;
+    width: 800px;
+    position: absolute; 
+    left: 50%;
+    margin-left: -400px;
+    margin-top: 340px;
+}
+
+div.stackf, div.stacks {
+    float: left;
+    margin-top: 0px;
+    position: relative;
+    overflow: inherit;
+    width: 320px;
+}
+
+div.stackf {
+    margin-left: 0px;
+}
+
+div.stacks {
+    margin-left: 160px;
+}
+
+

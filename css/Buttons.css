@@ -1,0 +1,90 @@
+@CHARSET "ISO-8859-1";
+/*button stuff*/
+.clear { /* generic container (i.e. div) for floating buttons */
+    overflow: hidden;
+    width: 100%;
+}
+
+button { 
+    position: relative;
+    border: 0; 
+    padding: 0;
+    cursor: pointer;
+    overflow: visible; /* removes extra side padding in IE */
+    
+    /*The Fancy Stuff*/
+    background: transparent url('images/B1end.png') no-repeat scroll top right;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #f3faf4;
+    display: block;
+    height: 40px;
+    margin-right: 6px;
+    padding-right: 34px; /* sliding doors padding */
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+button::-moz-focus-inner {
+    border: none;  /* overrides extra padding in Firefox */
+}
+
+button span {
+/*  position: static;*/
+    display: block;
+    white-space: nowrap;
+    text-align: center;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* Safari and Google Chrome only - fix margins */
+    button span {
+        margin-top: -1px;
+    }
+    caption{
+        margin-right: 0px;
+    }
+}
+
+button.submitBtn {
+    position: relative;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+}
+button.submitBtn2 {
+    position: relative;
+    left: 50%;
+    width: 570px;
+    margin-left: -285px;
+}
+
+button span {
+    background: transparent url('images/B1.png') no-repeat;
+    display: block;
+    line-height: 24px;
+    padding: 8px 0 8px 40px;
+}
+
+button.text_button {
+   border: none;
+   background-color: transparent;
+   padding: 0;
+   color: #30AB4A;
+}
+
+button:active {
+    background-position: bottom right;
+    color: #f3faf4;
+    outline: none; /* hide dotted outline in Firefox */
+    display: block;
+    text-align: center;
+}
+
+button:active span {
+    background-position: bottom left;
+    padding: 9px 0 7px 40px; /* push text down 1px */
+    font-weight: bold;
+}

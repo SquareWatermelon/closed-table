@@ -1,0 +1,112 @@
+
+<div class="stackShell">
+<!--The add reservation form-->
+<div class="stackf">
+ <form id=mkReserve action="ClosedTable.pl.cgi" method="post" >
+  <div style="float: left" >
+    <input type="hidden" name="state" value="mkReserve">
+    <input type="hidden" name="printState" value="reserve">
+    <input type="hidden" name="userName" value="!!userName!!">
+  <div class="TLcorner"><img src="images/corner.png" width="11" height="11" /></div>
+  <div class="TRcorner"><img src="images/TRcorner.png" width="11" height="11" /></div>
+  <div class="BLcorner"><img src="images/BLcorner.png" width="11" height="11" /></div>
+  <div class="BRcorner"><img src="images/BRcorner.png" width="11" height="11" /></div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="6" class="Setup" summary="Add Reservation">
+    <caption>
+      Add a Reservation
+    </caption>
+    <tr>
+      <td width="176" align="right" valign="top">Name:</td>
+      <td width="257" align="left" valign="top">
+        <input id="mkName" type="text" name="mkName" onfocus="clearText(this)" onblur="clearText(this)" value="Name to Reserve Under" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Number:</td>
+      <td align="left" valign="top">
+        <input id="mkNumber" type="text" name="mkNumber" onfocus="clearText(this)" onblur="clearText(this)" value="Number of people" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Time:</td>
+      <td align="left" valign="top">
+        <input id="mkTime" name="mkTime" type="text" onfocus="clearText(this)" onblur="clearText(this)" value="NN:NN(will be rounded)" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Date:</td>
+      <td align="left" valign="top">
+        <input id="mkDate" name="mkDate" type="text" onfocus="clearText(this)" onblur="clearText(this)" value="dd/mm/yy" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Phone:</td>
+      <td align="left" valign="top">
+        <input id="mkPhone" name="mkPhone" type="text" onfocus="clearText(this)" onblur="clearText(this)" value="Phone Number" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button value="Add" class="submitBtn"><span>Add</span></button>
+      </td>
+    </tr>
+  </table>
+ </div>
+</form>
+</div>
+
+<!--The remove reservation form-->
+<div class="stacks">
+ <form id=rmReserve action="ClosedTable.pl.cgi" method="post" >
+  <div style="float: left" >
+    <input type="hidden" name="state" value="rmReserve">
+    <input type="hidden" name="printState" value="reserve">
+    <input type="hidden" name="userName" value="!!userName!!">
+  <div class="TLcorner"><img src="images/corner.png" width="11" height="11" /></div>
+  <div class="TRcorner"><img src="images/TRcorner.png" width="11" height="11" /></div>
+  <div class="BLcorner"><img src="images/BLcorner.png" width="11" height="11" /></div>
+  <div class="BRcorner"><img src="images/BRcorner.png" width="11" height="11" /></div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="6" class="Setup" summary="Cancel Reservation">
+    <caption>
+      Cancel a Reservation
+    </caption>
+    <tr>
+      <td width="176" align="right" valign="top">Name:</td>
+      <td width="257" align="left" valign="top">
+        <input id="rmName" type="text" name="rmName" onfocus="clearText(this)" onblur="clearText(this)" value="Name to Reserve Under" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Number:</td>
+      <td align="left" valign="top">
+        <input id="rmNumber" type="text" name="rmNumber" onfocus="clearText(this)" onblur="clearText(this)" value="Number of people" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Time:</td>
+      <td align="left" valign="top">
+        <input id="rmTime" name="rmTime" type="text" onfocus="clearText(this)" onblur="clearText(this)" value="NN:NN(will be rounded)" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Date:</td>
+      <td align="left" valign="top">
+        <input id="rmDate" name="rmDate" type="text" onfocus="clearText(this)" onblur="clearText(this)" value="dd/mm/yy" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td align="right" valign="top">Phone:</td>
+      <td align="left" valign="top">
+        <input id="rmPhone" name="rmPhone" type="text" onfocus="clearText(this)" onblur="clearText(this)" value="Phone Number" size="25" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button value="Cancel" class="submitBtn"><span>Cancel</span></button>
+      </td>
+    </tr>
+  </table>
+ </div>
+</form>
+</div>
+</div>
