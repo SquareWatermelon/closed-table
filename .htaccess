@@ -1,4 +1,4 @@
-AuthUserFile /home/rmt2131/html/cs3157/project1/.htpasswd
+AuthUserFile .htpasswd
 AuthName ByPassword
 AuthType Basic
 require valid-user
